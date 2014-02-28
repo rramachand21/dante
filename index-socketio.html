@@ -29,6 +29,11 @@
         div.appendChild(document.createTextNode(line));
         body.appendChild(div);              
     }
+    
+    window.onbeforeunload = function() {
+        client.onclose = function () {}; // disable onclose handler first
+        client.close();
+    };
    
 </script>
 </head>
